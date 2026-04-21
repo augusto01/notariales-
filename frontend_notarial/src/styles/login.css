@@ -1,0 +1,199 @@
+/* Variables de Color Corporativas */
+:root {
+  --bg-dark: #020617;
+  --glass-bg: rgba(15, 23, 42, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --emerald-main: #10b981;
+  --emerald-hover: #059669;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --error-text: #f87171;
+}
+
+/* 1. Reset Global (Fundamental para que nada se salga) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Aseguramos que el input respete el contenedor */
+.login-input {
+  width: 100%; /* Ahora el 100% incluye el padding */
+  display: block;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #1e293b;
+  border-radius: 1rem;
+  padding: 0.875rem 1rem 0.875rem 3rem; /* El padding ya no lo ensancha de más */
+  color: white;
+  outline: none;
+  transition: all 0.3s;
+}
+
+/* 3. Ajuste del contenedor de inputs para evitar desbordes */
+.input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efectos de luces de fondo */
+.bg-glow {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  filter: blur(80px);
+  z-index: 0;
+}
+
+.glass-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  padding: 2.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.icon-wrapper {
+  display: inline-flex;
+  padding: 1rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 1rem;
+  color: var(--emerald-main);
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.login-header h2 {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.025em;
+}
+
+.login-header p {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Formulario */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #475569;
+  transition: color 0.3s;
+}
+
+.login-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid #1e293b;
+  border-radius: 1rem;
+  padding: 0.875rem 1rem 0.875rem 3rem;
+  color: white;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.login-input:focus {
+  border-color: var(--emerald-main);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+.login-input:focus + .input-icon {
+  color: var(--emerald-main);
+}
+
+/* Botón */
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, var(--emerald-main) 0%, var(--emerald-hover) 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.4);
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+/* Alertas */
+.error-alert {
+  background: var(--error-bg);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  color: var(--error-text);
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

@@ -51,3 +51,5 @@ CREATE TABLE clientes (
     
     FOREIGN KEY (empresa_id) REFERENCES empresas(id) ON DELETE CASCADE
 );
+
+select * from usuarios 
