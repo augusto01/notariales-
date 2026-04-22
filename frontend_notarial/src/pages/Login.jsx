@@ -43,7 +43,7 @@ const Login = () => {
           <div className="icon-wrapper">
             <Scale size={36} />
           </div>
-          <h2>Acceso Notarial</h2>
+          <h2>Notariales</h2>
           <p>Gestión de Escribanía Digital</p>
         </div>
 
